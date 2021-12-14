@@ -5,7 +5,7 @@ def kontrool(a)->str:
 				if int(a[6:13])<=29:
 					ans="õige"
 				else:
-					ans="vale"
+					pass
 			else:
 				ans="õige"
 		else:
@@ -15,4 +15,4 @@ def kontrool(a)->str:
 	return ans
 
 def pifagor(a):
-	
+	pass
