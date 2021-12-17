@@ -1,4 +1,13 @@
 from datetime import*
+
+k=""
+v=""
+resultat={}
+with open("result.txt","r",encoding='utf8') as f: # encoding - найденно в интернете так как была проблема из-за текста на русском
+	for i in f:
+		k,v=i.strip().split("-")
+		resultat[k.strip()]=v.strip()
+
 def kontrool(a)->bool:
 	if a[0:2].isdigit()==True and a[3:5].isdigit()==True and a[6:10].isdigit()==True:
 		d=int(a[0:2])
@@ -34,6 +43,13 @@ def pifagor(a):
 	for i in range(1,10):
 		a=listid.count(i)
 		if a==0:
-			a="нет"
+			a="нет "+str(i)
 		count.update({i:a})
 	print(count.items())
+	for keys,values in count.items():
+		if type(values)==int:
+			a=str(keys)*int(values)
+		else:
+			a=values
+		b=resultat.get(a)
+		print(a+" - "+b)
