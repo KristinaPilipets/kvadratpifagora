@@ -13,7 +13,6 @@ def kontrool(a)->bool:
 		d=int(a[0:2])
 		m=int(a[3:5])
 		y=int(a[6:10])
-		print(d,m,y)
 		if date(y,m,d) is not None:
 			data=True
 		else:
@@ -38,18 +37,17 @@ def pifagor(a):
 	secondrow=(str(first)+str(second)+str(third)+str(fourth))
 	listid=list(firstrow+secondrow)
 	listid=[int(x) for x in listid]
-	print(listid)
 	count={}
 	for i in range(1,10):
 		a=listid.count(i)
 		if a==0:
 			a="нет "+str(i)
 		count.update({i:a})
-	print(count.items())
 	for keys,values in count.items():
 		if type(values)==int:
 			a=str(keys)*int(values)
 		else:
 			a=values
 		b=resultat.get(a)
+		print()
 		print(a+" - "+b)
